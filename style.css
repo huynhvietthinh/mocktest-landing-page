@@ -1,0 +1,196 @@
+/* --- BIẾN MÀU VÀ FONT (CSS VARIABLES) --- */
+:root {
+    --primary-color: #6a5acd; /* Một màu tím đẹp (SlateBlue) */
+    --primary-color-dark: #483d8b; /* Màu tím đậm hơn cho hiệu ứng hover */
+    --light-background: #f8f9fa;
+    --text-color: #343a40;
+    --heading-font: 'Poppins', sans-serif;
+    --body-font: 'Lato', sans-serif;
+    --box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    --border-radius: 12px;
+}
+
+/* --- THIẾT LẬP CHUNG --- */
+body {
+    font-family: var(--body-font);
+    margin: 0;
+    line-height: 1.7;
+    color: var(--text-color);
+    background-color: #fff;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: var(--heading-font);
+    font-weight: 600;
+}
+
+/* ======================================= */
+/* === ĐỊNH NGHĨA CLASS CONTAINER MỚI === */
+/* ======================================= */
+.container {
+    width: 100%;          /* Chiếm 100% chiều rộng của thẻ cha */
+    max-width: 1140px;    /* Nhưng không bao giờ rộng quá 1140px */
+    margin-left: auto;    /* Tự động căn giữa theo chiều ngang */
+    margin-right: auto;
+    padding-left: 1.5rem; /* Luôn có khoảng cách 2 bên lề, kể cả trên mobile */
+    padding-right: 1.5rem;
+    box-sizing: border-box; /* Giúp padding không làm tăng kích thước của div */
+}
+
+
+/* --- Block: Button (nâng cấp) --- */
+.button {
+    padding: 12px 28px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-family: var(--heading-font);
+    transition: all 0.3s ease; /* Hiệu ứng chuyển động mượt mà */
+}
+
+.button--primary {
+    background-color: var(--primary-color);
+    color: white;
+    border-radius: 50px; /* Bo tròn thành hình viên thuốc */
+    box-shadow: 0 4px 15px rgba(106, 90, 205, 0.4);
+}
+
+.button--primary:hover {
+    background-color: var(--primary-color-dark);
+    transform: translateY(-3px); /* Nút hơi nhích lên khi di chuột vào */
+    box-shadow: 0 6px 20px rgba(106, 90, 205, 0.5);
+}
+
+/* --- Block: Header (thêm đổ bóng) --- */
+.header {
+    padding: 1rem 0; /* Chỉ cần padding trên dưới */
+    background-color: #fff;
+    border-bottom: 1px solid #eee;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.header__nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header__logo {
+    font-size: 1.8rem;
+    font-weight: 700;
+    text-decoration: none;
+    color: var(--primary-color);
+}
+
+/* --- Block: Hero Section (thêm gradient nền) --- */
+.hero {
+    padding: 5rem 0; /* Chỉ cần padding trên dưới */
+    background: linear-gradient(135deg, #e6e9f0 0%, #eef1f5 100%);
+}
+
+/* Sửa đổi selector này để áp dụng cho container bên trong hero */
+.hero .container {
+    display: flex;
+    align-items: center;
+    gap: 3rem;
+}
+
+.hero__content {
+    flex: 1;
+}
+
+.hero__title {
+    font-size: 3rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    line-height: 1.2;
+}
+
+.hero__description {
+    font-size: 1.1rem;
+    margin-bottom: 2rem;
+}
+
+.hero__image-container {
+    flex: 1;
+    text-align: center;
+}
+
+.hero__image {
+    max-width: 100%;
+    height: auto;
+}
+
+/* --- Block: Features Section (thiết kế lại card) --- */
+.features {
+    padding: 5rem 0; /* Chỉ cần padding trên dưới */
+    background-color: var(--light-background);
+}
+
+.features__title {
+    text-align: center;
+    font-size: 2.5rem;
+    margin-bottom: 3rem;
+}
+
+.features__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+}
+
+.card {
+    background-color: white;
+    padding: 2rem;
+    border-radius: var(--border-radius);
+    box-shadow: var(--box-shadow);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0,0,0,0.1);
+}
+
+.card__title {
+    font-size: 1.5rem;
+    margin-top: 1rem;
+    margin-bottom: 0.5rem;
+}
+
+/* --- Block: Footer (thiết kế lại) --- */
+.footer {
+    padding: 2rem 0; /* Chỉ cần padding trên dưới */
+    background-color: #212529;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+.footer .container {
+    text-align: center;
+}
+
+/* --- RESPONSIVE CSS --- */
+@media (max-width: 992px) {
+    .features__grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 768px) {
+    .hero .container {
+        flex-direction: column;
+        text-align: center;
+    }
+    
+    .hero__title {
+        font-size: 2.5rem;
+    }
+
+    .features__grid {
+        grid-template-columns: 1fr; /* 1 cột trên mobile */
+    }
+}
