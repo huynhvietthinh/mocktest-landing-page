@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>MockTest - Luyện thi hiệu quả</title>
+    <meta name="description" content="MockTest cung cấp hàng ngàn bộ đề thi thử chất lượng, giúp bạn làm quen với áp lực phòng thi và đánh giá chính xác năng lực.">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Lato:wght@400;700&display=swap" rel="stylesheet">
@@ -11,50 +12,329 @@
     <link rel="icon" type="image/png" href="./images/logo.svg">
 </head>
 <body>
+    <!-- Skip to main content link for keyboard navigation -->
+    <a href="#main-content" class="skip-link">Chuyển đến nội dung chính</a>
 
-    <header class="header">
-        <div class="container"> <nav class="header__nav">
-                <a href="#" class="header__logo">MockTest</a>
-                <button class="button button--primary">Bắt đầu ngay</button>
+    <header class="header" role="banner">
+        <div class="container">
+            <nav class="header__nav" role="navigation" aria-label="Main navigation">
+                <a href="#" class="header__logo" aria-label="MockTest - Trang chủ">MockTest</a>
+                <button class="button button--primary" aria-label="Bắt đầu sử dụng MockTest">Bắt đầu ngay</button>
             </nav>
-        </div> </header>
+        </div>
+    </header>
 
-    <main>
-        <section class="hero">
-            <div class="container"> <div class="hero__content">
-                    <h1 class="hero__title">Tự tin chinh phục mọi kỳ thi</h1>
+    <main id="main-content" role="main">
+        <section class="hero" aria-labelledby="hero-title">
+            <div class="container">
+                <div class="hero__content">
+                    <h1 id="hero-title" class="hero__title">Tự tin chinh phục mọi kỳ thi</h1>
                     <p class="hero__description">
                         MockTest cung cấp hàng ngàn bộ đề thi thử chất lượng, giúp bạn làm quen với áp lực phòng thi và đánh giá chính xác năng lực.
                     </p>
-                    <button class="button button--primary">Thử miễn phí</button>
+                    <button class="button button--primary" aria-label="Bắt đầu thử miễn phí MockTest">Thử miễn phí</button>
                 </div>
                 <div class="hero__image-container">
                     <img src="./images/roman-hero-caesar-svgrepo-com.svg" alt="Học sinh đang học bài với máy tính" class="hero__image">
                 </div>
-            </div> </section>
+            </div>
+        </section>
 
-        <section class="features">
-            <div class="container"> <h2 class="features__title">Tại sao chọn MockTest?</h2>
-                <div class="features__grid">
-                    <div class="card">
-                        <h3 class="card__title">Đề thi đa dạng</h3>
+        <section class="features" aria-labelledby="features-title">
+            <div class="container">
+                <h2 id="features-title" class="features__title">Tại sao chọn MockTest?</h2>
+                <div class="features__grid" role="list" aria-label="Danh sách tính năng MockTest">
+                    <article class="card" role="listitem" tabindex="0" aria-labelledby="card-title-1">
+                        <h3 id="card-title-1" class="card__title">Đề thi đa dạng</h3>
                         <p class="card__description">Ngân hàng đề thi phong phú, cập nhật liên tục theo chương trình mới nhất.</p>
-                    </div>
-                    <div class="card">
-                        <h3 class="card__title">Phân tích kết quả</h3>
+                    </article>
+                    <article class="card" role="listitem" tabindex="0" aria-labelledby="card-title-2">
+                        <h3 id="card-title-2" class="card__title">Phân tích kết quả</h3>
                         <p class="card__description">Xem lại đáp án, lời giải chi tiết và biểu đồ phân tích điểm mạnh, điểm yếu.</p>
-                    </div>
-                    <div class="card">
-                        <h3 class="card__title">Giao diện thân thiện</h3>
+                    </article>
+                    <article class="card" role="listitem" tabindex="0" aria-labelledby="card-title-3">
+                        <h3 id="card-title-3" class="card__title">Giao diện thân thiện</h3>
                         <p class="card__description">Trải nghiệm làm bài mượt mà trên cả máy tính và điện thoại di động.</p>
-                    </div>
+                    </article>
                 </div>
-            </div> </section>
+            </div>
+        </section>
     </main>
 
-    <footer class="footer">
-        <div class="container"> <p class="footer__text">&copy; 2025 MockTest. All rights reserved.</p>
-        </div> </footer>
+    <!-- Modal Overlay -->
+    <div id="modal-overlay" class="modal-overlay" role="dialog" aria-labelledby="modal-title" aria-hidden="true">
+        <div class="modal-container">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h2 id="modal-title" class="modal-title">Bắt đầu với MockTest</h2>
+                    <button class="modal-close" aria-label="Đóng modal" tabindex="0">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="signup-options">
+                        <div class="signup-option">
+                            <h3>Đăng ký miễn phí</h3>
+                            <p>Truy cập đầy đủ tất cả tính năng</p>
+                            <ul class="feature-list">
+                                <li>✓ Hàng ngàn đề thi thử</li>
+                                <li>✓ Phân tích kết quả chi tiết</li>
+                                <li>✓ Lưu tiến độ học tập</li>
+                                <li>✓ Hỗ trợ 24/7</li>
+                            </ul>
+                            <button class="button button--primary button--large" id="signup-free">
+                                Đăng ký ngay
+                            </button>
+                        </div>
+                        <div class="signup-option">
+                            <h3>Đăng nhập</h3>
+                            <p>Tiếp tục hành trình học tập</p>
+                            <form class="login-form" id="login-form">
+                                <div class="form-group">
+                                    <label for="email">Email</label>
+                                    <input type="email" id="email" name="email" required aria-describedby="email-help">
+                                </div>
+                                <div class="form-group">
+                                    <label for="password">Mật khẩu</label>
+                                    <input type="password" id="password" name="password" required>
+                                </div>
+                                <button type="submit" class="button button--primary button--large">
+                                    Đăng nhập
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <footer class="footer" role="contentinfo">
+        <div class="container">
+            <p class="footer__text">&copy; 2025 MockTest. All rights reserved.</p>
+        </div>
+    </footer>
+
+    <script>
+        // Enhanced keyboard navigation and accessibility
+        document.addEventListener('DOMContentLoaded', function() {
+            // Modal functionality
+            const modal = document.getElementById('modal-overlay');
+            const openModalButtons = document.querySelectorAll('.button--primary');
+            const closeModalButton = document.querySelector('.modal-close');
+            const signupFreeButton = document.getElementById('signup-free');
+            const loginForm = document.getElementById('login-form');
+
+            // Open modal when clicking "Bắt đầu ngay" buttons
+            openModalButtons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    openModal();
+                });
+            });
+
+            // Close modal functions
+            function openModal() {
+                modal.classList.add('active');
+                modal.setAttribute('aria-hidden', 'false');
+                document.body.style.overflow = 'hidden'; // Prevent background scrolling
+                
+                // Focus management
+                const firstFocusable = modal.querySelector('button, input, [tabindex]');
+                if (firstFocusable) {
+                    firstFocusable.focus();
+                }
+            }
+
+            function closeModal() {
+                modal.classList.remove('active');
+                modal.setAttribute('aria-hidden', 'true');
+                document.body.style.overflow = ''; // Restore scrolling
+                
+                // Return focus to the button that opened the modal
+                const activeElement = document.activeElement;
+                if (activeElement && activeElement.classList.contains('button--primary')) {
+                    activeElement.focus();
+                }
+            }
+
+            // Close modal events
+            closeModalButton.addEventListener('click', closeModal);
+            
+            // Close modal when clicking overlay
+            modal.addEventListener('click', function(e) {
+                if (e.target === modal) {
+                    closeModal();
+                }
+            });
+
+            // Close modal with Escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape' && modal.classList.contains('active')) {
+                    closeModal();
+                }
+            });
+
+            // Trap focus within modal
+            modal.addEventListener('keydown', function(e) {
+                if (e.key === 'Tab') {
+                    const focusableElements = modal.querySelectorAll(
+                        'button, input, [tabindex]:not([tabindex="-1"])'
+                    );
+                    const firstElement = focusableElements[0];
+                    const lastElement = focusableElements[focusableElements.length - 1];
+
+                    if (e.shiftKey) {
+                        if (document.activeElement === firstElement) {
+                            e.preventDefault();
+                            lastElement.focus();
+                        }
+                    } else {
+                        if (document.activeElement === lastElement) {
+                            e.preventDefault();
+                            firstElement.focus();
+                        }
+                    }
+                }
+            });
+
+            // Signup free button action
+            signupFreeButton.addEventListener('click', function(e) {
+                e.preventDefault();
+                alert('Chức năng đăng ký sẽ được triển khai sớm! Cảm ơn bạn đã quan tâm đến MockTest.');
+                closeModal();
+            });
+
+            // Login form submission
+            loginForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                const email = document.getElementById('email').value;
+                const password = document.getElementById('password').value;
+                
+                if (email && password) {
+                    alert('Chức năng đăng nhập sẽ được triển khai sớm! Email: ' + email);
+                    closeModal();
+                } else {
+                    alert('Vui lòng điền đầy đủ thông tin!');
+                }
+            });
+
+            // Skip link functionality
+            const skipLink = document.querySelector('.skip-link');
+            if (skipLink) {
+                skipLink.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    const target = document.querySelector(this.getAttribute('href'));
+                    if (target) {
+                        target.focus();
+                        target.scrollIntoView({ behavior: 'smooth' });
+                    }
+                });
+            }
+
+            // Enhanced card interactions
+            const cards = document.querySelectorAll('.card');
+            cards.forEach(card => {
+                // Add keyboard support for cards
+                card.addEventListener('keydown', function(e) {
+                    if (e.key === 'Enter' || e.key === ' ') {
+                        e.preventDefault();
+                        // Add visual feedback
+                        this.style.transform = 'translateY(-2px)';
+                        setTimeout(() => {
+                            this.style.transform = '';
+                        }, 150);
+                    }
+                });
+
+                // Add click handler for better UX
+                card.addEventListener('click', function() {
+                    // Add visual feedback
+                    this.style.transform = 'translateY(-2px)';
+                    setTimeout(() => {
+                        this.style.transform = '';
+                    }, 150);
+                });
+            });
+
+            // Button interactions
+            const buttons = document.querySelectorAll('.button');
+            buttons.forEach(button => {
+                button.addEventListener('click', function(e) {
+                    // Add ripple effect
+                    const ripple = document.createElement('span');
+                    const rect = this.getBoundingClientRect();
+                    const size = Math.max(rect.width, rect.height);
+                    const x = e.clientX - rect.left - size / 2;
+                    const y = e.clientY - rect.top - size / 2;
+                    
+                    ripple.style.width = ripple.style.height = size + 'px';
+                    ripple.style.left = x + 'px';
+                    ripple.style.top = y + 'px';
+                    ripple.classList.add('ripple');
+                    
+                    this.appendChild(ripple);
+                    
+                    setTimeout(() => {
+                        ripple.remove();
+                    }, 600);
+                });
+            });
+
+            // Announce page changes for screen readers
+            const main = document.querySelector('main');
+            if (main) {
+                const observer = new MutationObserver(function(mutations) {
+                    mutations.forEach(function(mutation) {
+                        if (mutation.type === 'childList') {
+                            // Announce changes to screen readers
+                            const announcement = document.createElement('div');
+                            announcement.setAttribute('aria-live', 'polite');
+                            announcement.setAttribute('aria-atomic', 'true');
+                            announcement.style.position = 'absolute';
+                            announcement.style.left = '-10000px';
+                            announcement.style.width = '1px';
+                            announcement.style.height = '1px';
+                            announcement.style.overflow = 'hidden';
+                            document.body.appendChild(announcement);
+                            
+                            setTimeout(() => {
+                                document.body.removeChild(announcement);
+                            }, 1000);
+                        }
+                    });
+                });
+                
+                observer.observe(main, { childList: true, subtree: true });
+            }
+        });
+
+        // Add ripple effect styles
+        const style = document.createElement('style');
+        style.textContent = `
+            .button {
+                position: relative;
+                overflow: hidden;
+            }
+            
+            .ripple {
+                position: absolute;
+                border-radius: 50%;
+                background: rgba(255, 255, 255, 0.6);
+                transform: scale(0);
+                animation: ripple-animation 0.6s linear;
+                pointer-events: none;
+            }
+            
+            @keyframes ripple-animation {
+                to {
+                    transform: scale(4);
+                    opacity: 0;
+                }
+            }
+        `;
+        document.head.appendChild(style);
+    </script>
 
 </body>
 </html>
